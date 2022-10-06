@@ -1,0 +1,330 @@
+/*-------- ALL CONTENT IN FILE --------*/
+
+/* Fonts: import font from google, and a local one from other website */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@font-face {
+        font-family: right-grotesk;
+        src: url(fonts/PPRightGrotesk-WideMedium.otf);
+}
+
+:root {
+        /* learned variables for css colors in case I 
+        decided to change the colors 
+
+        found here: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties*/
+
+        /* also, hex codes used in figma did not look
+        the same when  used in css, so i took the rgb
+        using the color picker on my macbook*/
+        --red: rgb(222, 56, 35);
+        --yellow: rgb(255, 235, 157);
+        --dark-blue: rgb(0, 60, 105);
+        --slate-blue: rgb(96, 138, 152);
+        --off-white: #FEFEFE;
+}
+
+html, body {
+        margin: 0;
+        padding: 0;
+}
+
+* {
+        font-family: 'Inter', sans-serif;
+}
+
+/* -------- GENERAL ELEMENTS --------*/
+.content {
+        /* add margin of 50px to left and right */
+        margin: 0% 50px;
+}
+
+.flex-content {
+        /* makes object flex and aligns them to center */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.big-header {
+        /* largest header that uses alternate font for emphasis */
+        font-family: right-grotesk;
+        font-size: 7.7em;
+        color: var(--off-white);
+}
+
+.bigger-header {
+        /* second largest header, also uses alternate font for emphasis*/
+        font-family: right-grotesk;
+        font-size: 4em;
+        color: black;
+        text-align: right;
+        margin-top: 0%;
+}
+
+/*-------------- HEADER --------------*/
+header {
+        /* makes elements in header flex.
+        this allows me to split them to left and right align */
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+        margin: 0% auto;
+        padding-top: 40px;
+}
+
+header img {
+        width: 150px;
+        height: auto;
+}
+
+nav a {
+        font-size: 1.1em;
+        text-decoration: none;
+        color: black;
+        margin: 0% 12px;
+}
+
+nav a:hover {
+        text-decoration: underline;
+}
+
+nav button {
+        margin-left: 13px;
+        font-size: 1.1em;
+        text-decoration: none;
+        color: black;
+        border: 2px solid black;
+        height: 70px;
+        width: 170px;
+        background: transparent;
+}
+
+#hamburger {
+        /* hides hamburger menu until needed for tablet and mobile */
+        display: none;
+}
+
+/*---------- BUTTON STYLING ----------*/
+button:hover {
+        cursor: pointer;
+}
+
+#btn-launch {
+        /* styling for the launch app button, solid white */
+        font-size: 1.6em;
+        background-color: var(--off-white);
+        max-width: 375px;
+        width: 30vw;
+        height: 75px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+}
+
+#btn-download {
+        /* styling for download app button,
+        opposite of launch, transparent with white border */
+        font-size: 1.6em;
+        color: var(--off-white);
+        background-color: transparent;
+        max-width: 375px;
+        width: 30vw;
+        height: 75px;
+        border: 2px solid var(--off-white);
+        border-radius: 5px;
+        margin: 10px;
+}
+
+/*---------- YELLOW SECTION ----------*/
+#section1 {
+        /* using our yellow variable */
+        background: var(--yellow);
+        margin: 0%;
+        padding: 0%;
+}
+
+#section1-1 .content img {
+        object-fit: cover;
+        max-width: 500px;
+        width: 36vw;
+        max-height: 500px;
+        height: 36vw;
+}
+
+#section1-1 .content p {
+        color: black;
+}
+
+/*----------- WHITE SECTION -----------*/
+
+#section2 {
+        width: 85vw;
+        margin: 20px auto 50px;
+}
+
+#body-paragraph {
+        /* makes the main body paragraph aligned
+        to the left with extra space to the left of it */
+        width: 80%;
+        margin: 0% 20% 0% 0%;
+        font-size: 2.2em;
+}
+
+#light-blue-dec {
+        background-color: var(--slate-blue);
+        height: 85px;
+        width: 33vw;
+}
+
+#dark-blue-dec {
+        background-color: var(--dark-blue);
+        height: 60px;
+        width: 47vw;
+        margin-left: 53vw;
+}
+
+/* RED SECTION */
+#section3 {
+        background: var(--red);
+}
+
+/*--------------- FOOTER ---------------*/
+footer {
+        background: var(--dark-blue);
+        padding: 20px;
+}
+
+.inner {
+        /* makes the elements in the footer flex.
+        spaces them evenly through the div */
+        width: 85vw;
+        margin: 0% auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+}
+
+footer img {
+        width: 100px;
+        height: auto;
+}
+
+dl.content {
+        list-style: none;
+        color: var(--off-white);
+}
+
+dt {
+        color: var(--off-white);
+        margin-left: 2.5em;
+        /*margin-left aligns the dt with the dd*/
+        margin-bottom: 10px;
+        font-family: right-grotesk;
+}
+
+dd a {
+        text-decoration: underline;
+        color: var(--off-white);
+}
+
+
+/* ----------------- MEDIA QUERIES ----------------- */
+
+/* Tablet Mode */
+@media (max-width: 991px) {
+        header img {
+                width: 30vw;
+        }
+
+        nav {
+                display: none;
+        }
+
+        #hamburger {
+                display: block;
+                height: 75px;
+                width: auto;
+        }
+
+        .big-header {
+                font-size: 4.8em;
+        }
+
+        .bigger-header {
+                font-size: 4em;
+        }
+
+        #btn-launch {
+                display: none;
+        }
+
+        #btn-download {
+                width: 33vw;
+                font-size: 1.45em;
+                color: black;
+                background-color: var(--off-white);
+                height: 75px;
+                border: none;
+                border-radius: 5px;
+                margin-bottom: 75px
+        }
+
+}
+
+
+/* Phone Mode */
+@media (max-width: 767px) {
+        header img {
+                width: 40vw;
+        }
+
+        #hamburger {
+                height: 50px;
+        }
+
+        #section1-1 .content:nth-child(1) {
+                order: 2;
+        }
+
+        #section1-1 .content:nth-child(2) {
+                order: 1;
+        }
+
+        .flex-content, .inner {
+                flex-flow: row wrap;
+        }
+
+        .content img {
+                margin-bottom: 50px;
+                min-width: 70vw;
+                min-height: 30vh;
+        }
+
+        .big-header {
+                font-size: 5em;
+        }
+
+        #btn-launch {
+                display: none;
+        }
+
+        #btn-download {
+                width: 60vw;
+                font-size: 1.45em;
+                color: black;
+                background-color: var(--off-white);
+                height: 75px;
+                border: none;
+                border-radius: 5px;
+                margin-bottom: 75px
+        }
+
+        .bigger-header {
+                font-size: 3em;
+        }
+
+        #body-paragraph {
+                font-size: 1.2em;
+        }
+}
